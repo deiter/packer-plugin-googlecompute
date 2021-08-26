@@ -9,7 +9,6 @@ require (
 	github.com/hashicorp/packer-plugin-sdk v0.2.4-0.20210824193240-6b55f55dd41b
 	github.com/hashicorp/vault/api v1.0.4
 	github.com/klauspost/compress v1.13.4 // indirect
-	github.com/klauspost/crc32 v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.4.0
 	github.com/stretchr/testify v1.7.0
 	github.com/zclconf/go-cty v1.9.0
