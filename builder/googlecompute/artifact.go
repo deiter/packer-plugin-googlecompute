@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/hashicorp/packer-plugin-sdk/packer/registryimage"
+	registryimage "github.com/hashicorp/packer-plugin-sdk/packer/registry/image"
 )
 
 // Artifact represents a GCE image as the result of a Packer build.
@@ -46,10 +46,12 @@ func (a *Artifact) String() string {
 
 func (a *Artifact) State(name string) interface{} {
 	if name == registryimage.ArtifactStateURI {
-		return registryimage.FromArtifact(a,
+		img, _ := registryimage.FromArtifact(a,
 			registryimage.WithID(a.Id()),
 			registryimage.WithRegion(a.config.Zone),
 		)
+
+		return img
 	}
 
 	switch name {
